@@ -1,0 +1,40 @@
+:root{
+    --blue:#a5b4fc;
+    --white:#eff6ff;
+    --font: 'Itim';
+    --big: 4rem;
+    --medium: 1.5rem;
+    --small: 0.5rem;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    height: 100px;
+    flex:1 0 100%;
+    background-color: var(--blue);
+    box-shadow: 0px 5px 20px var(--blue);
+}
+
+.container{
+    font-family: var(--font);
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 2em;
+}
+
+.logo{
+    font-size: var(--big);
+}
+.login{
+    font-size: var(--medium);
+}
