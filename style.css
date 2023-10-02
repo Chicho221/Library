@@ -94,6 +94,18 @@ main{
     color: white;
     font-size: var(--normal);
 }
+.mybooks_section{
+    font-family: var(--font);
+    cursor: default;
+    color: var(--white);
+    width: 80%;
+    height: 45px;
+    font-size: var(--medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, var(--white) 25%, var(--blue300) 40%, var(--blue300) 60%, var(--white) 75%);
+}
 
 .card{
     color: var(--blue300);
