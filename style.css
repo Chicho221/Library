@@ -125,6 +125,7 @@ main{
     background-color: var(--blue200);
     transform: scale(1.01);
     border-radius: 1rem 0 1rem 1rem;
+    z-index: 1;
 }
 .card:hover .book_cover{
     background-color: var(--blue100);
@@ -182,10 +183,15 @@ main{
     z-index: -1;
 }
 .icon{
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+}
+.icon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 .delete_card, .edit_card{
     background-color: transparent;
     border: none;
 }
+
