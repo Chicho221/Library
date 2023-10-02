@@ -34,7 +34,7 @@
                     <form action="">
                         <label for="book_title">Title</label>
                             <input type="text" name="title" id="book_title">
-                        <label for="book_genre">Title</label>
+                        <label for="book_genre">Genre</label>
                         <select name="genre" id="book_genre">
                             <option value="drama">Drama</option>
                             <option value="action">Action</option>
@@ -45,16 +45,16 @@
                             <option value="criminal">Criminal</option>
                             <option value="mystery">Mystery</option>
                         </select>
-                        <label for="book_author">Title</label>
+                        <label for="book_author">Author</label>
                             <input type="text" name="author" id="book_author">
-                        <label for="book_pages">Title</label>    
+                        <label for="book_pages">Pages</label>    
                             <input type="number" name="pages" id="book_pages">
                         <fieldset>
                             <legend>Book Status</legend>
-                            <label><input type="radio" name="status" id="book_status" value="finished">Finished</label>
-                            <label><input type="radio" name="status" id="book_status" value="dropped">Dropped</label>
-                            <label><input type="radio" name="status" id="book_status" value="inprogress">In Progress</label>
-                            <label><input type="radio" name="status" id="book_status" value="planning">Planning</label>
+                            <label><input type="radio" name="status" id="radio1" value="finished">Finished</label>
+                            <label><input type="radio" name="status" id="radio2" value="dropped">Dropped</label>
+                            <label><input type="radio" name="status" id="radio3" value="inprogress">In Progress</label>
+                            <label><input type="radio" name="status" id="radio4" value="planning">Planning</label>
                         </fieldset>
                         <label for="book_rating">Score out of 5</label>
                         <select name="rating" id="book_rating">
@@ -64,6 +64,8 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+                        <label for="book_cover">Book Cover</label>
+                        <input type="file" name="cover" id="book_cover">
                         <button type="button" id="add_book_submit">Submit</button>
                         <button type="button" id="add_book_cancel">Cancel</button>
                     </form>
@@ -84,7 +86,7 @@
                     <div class="author">Author: J.K Rowling</div>
                     <div class="pages">Pages: ???/223 <!-- if status reading/dropped ???/out of --></div>
                     <div class="status">Status: <!-- finished/reading/plantoread/dropped --></div>
-                    <div class="raiting">?/5</div>
+                    <div class="rating">?/5</div>
                 </div>
                 <div class="book_cover"></div>
                 <div class="card_menu">
@@ -99,7 +101,7 @@
                     <div class="author">Author: J.K Rowling</div>
                     <div class="pages">Pages: ???/223 <!-- if status reading/dropped ???/out of --></div>
                     <div class="status">Status: <!-- finished/reading/plantoread/dropped --></div>
-                    <div class="raiting">?/5</div>
+                    <div class="rating">?/5</div>
                 </div>
                 <div class="book_cover"></div>
                 <div class="card_menu">
@@ -114,7 +116,7 @@
                     <div class="author">Author: J.K Rowling</div>
                     <div class="pages">Pages: ???/223 <!-- if status reading/dropped ???/out of --></div>
                     <div class="status">Status: <!-- finished/reading/plantoread/dropped --></div>
-                    <div class="raiting">?/5</div>
+                    <div class="rating">?/5</div>
                 </div>
                 <div class="book_cover"></div>
                 <div class="card_menu">

@@ -171,7 +171,7 @@ main{
 .title{
     font-size: var(--medium);
 }
-.raiting{
+.rating{
     font-size: var(--big);
 }
 .book_cover{
