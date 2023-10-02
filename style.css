@@ -1,9 +1,12 @@
 :root{
-    --blue:#a5b4fc;
+    --blue300:#a5b4fc;
+    --blue200: #c7d2fe;
+    --blue100: #e0e7ff;
     --white:#eff6ff;
     --font: 'Itim';
     --big: 4rem;
     --medium: 1.5rem;
+    --normal: 1rem;
     --small: 0.5rem;
 }
 
@@ -12,24 +15,29 @@ body{
     margin: 0;
     background-color: var(--white);
 }
+p{
+    padding: 0;
+    margin: 0;
+}
 
+/* ///HEADER/// */
 header{
     display: flex;
     justify-content: center;
     color: var(--white);
     height: 100px;
     flex:1 0 100%;
-    background-color: var(--blue);
-    box-shadow: 0px 5px 20px var(--blue);
+    background-color: var(--blue300);
+    box-shadow: 0px 5px 20px var(--blue300);
 }
 
 .container{
     font-family: var(--font);
-    width: 1200px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 2em;
+    padding: 0 var(--medium);
 }
 
 .logo{
@@ -37,4 +45,61 @@ header{
 }
 .login{
     font-size: var(--medium);
+}
+
+/* ////// */
+/* ///MAIN/// */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.card_container{
+    width: 80%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+#card_add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 200px;
+    border-radius: 1rem;
+    background-color: var(--blue100);
+    transition: .3s;
+}
+#card_add:hover{
+    transform: scale(1.02);
+    background-color: var(--blue200); 
+}
+#card_add:hover #add_button{
+    background-color: var(--blue300);
+}
+#add_button{
+    border: 0;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    background-color: var(--blue200);
+    cursor: pointer;
+    color: white;
+    font-size: var(--normal);
+}
+
+.card{
+    color: var(--blue300);
+    height: 200px;
+    background-color: var(--blue100);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: .3s;
+}
+.card:hover{
+    color: var(--white);
+    background-color: var(--blue200);
+    transform: scale(1.01);
 }
