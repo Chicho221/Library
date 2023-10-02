@@ -25,7 +25,7 @@ header{
     display: flex;
     justify-content: center;
     color: var(--white);
-    height: 100px;
+    height: 120px;
     flex:1 0 100%;
     background-color: var(--blue300);
     box-shadow: 0px 5px 20px var(--blue300);
@@ -42,9 +42,41 @@ header{
 
 .logo{
     font-size: var(--big);
+    cursor: default;
+}
+.loggedin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile_pic{
+    background-color: var(--white);
+    height: 64px;
+    width: 64px;
+    border-radius: 32px;
+}
+.logout{
+    background-color: transparent;
+    border: 0;
+    font-family: var(--font);
+    color: var(--white);
+    font-size: var(--normal);
+    cursor: pointer;
+    transition: 0.1s;
 }
 .login{
+    background-color: transparent;
+    border: 0;
+    font-family: var(--font);
+    color: var(--white);
     font-size: var(--medium);
+    cursor: pointer;
+    transition: 0.1s;
+}
+.logout:hover,
+.login:hover{
+    color: var(--blue100);
+    transform: scale(1.1);
 }
 
 /* ////// */
@@ -139,21 +171,6 @@ main{
 .title{
     font-size: var(--medium);
 }
-.genre{
-    font-size: var(--normal);
-}
-.author{
-    font-size: var(--normal);
-}
-.pages{
-    font-size: var(--normal);
-}
-.status{
-    font-size: var(--normal);
-}
-.progress{
-    font-size: var(--normal);
-}
 .raiting{
     font-size: var(--big);
 }
@@ -195,3 +212,6 @@ main{
     border: none;
 }
 
+.disabled{
+    display: none;
+}

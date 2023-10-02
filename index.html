@@ -13,7 +13,13 @@
     <header>
        <div class="container">
            <div class="logo">Library</div>
-           <div class="login">Log in</div>
+           <div class="not_loggedin disabled">
+                <button class="login">Log in</button>
+            </div>
+           <div class="loggedin">
+                <div class="profile_pic"></div>
+                <button class="logout">Log out</button>
+           </div>
        </div>
     </header>
     <svg viewBox="0 0 100% 112.5" width="100%" height="86"  transform="scale(1, -1)">
@@ -73,9 +79,6 @@
                     <button class="edit_card"><img class="icon" src="icon/pencil-white.svg" alt=""></button>
                 </div>
             </div>
-            <div class="card">4</div>
-            <div class="card">5</div>
-            <div class="card">6</div>
         </div>
     </main>
     <script src="script.js"></script>
