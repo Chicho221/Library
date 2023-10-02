@@ -211,7 +211,9 @@ main{
     background-color: transparent;
     border: none;
 }
-
+.add_book_dialog::backdrop{
+    background-color: transparent;
+}
 .disabled{
     display: none;
 }

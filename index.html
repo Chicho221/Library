@@ -30,10 +30,53 @@
         <div class="add_card_container">
             <div id="card_add">
                 <button id="add_button">+</button>
+                <dialog class="add_book_dialog">
+                    <form action="">
+                        <label for="book_title">Title</label>
+                            <input type="text" name="title" id="book_title">
+                        <label for="book_genre">Title</label>
+                        <select name="genre" id="book_genre">
+                            <option value="drama">Drama</option>
+                            <option value="action">Action</option>
+                            <option value="romance">Romance</option>
+                            <option value="sci-fi">Sci-fi</option>
+                            <option value="horror">Horror</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="criminal">Criminal</option>
+                            <option value="mystery">Mystery</option>
+                        </select>
+                        <label for="book_author">Title</label>
+                            <input type="text" name="author" id="book_author">
+                        <label for="book_pages">Title</label>    
+                            <input type="number" name="pages" id="book_pages">
+                        <fieldset>
+                            <legend>Book Status</legend>
+                            <label><input type="radio" name="status" id="book_status" value="finished">Finished</label>
+                            <label><input type="radio" name="status" id="book_status" value="dropped">Dropped</label>
+                            <label><input type="radio" name="status" id="book_status" value="inprogress">In Progress</label>
+                            <label><input type="radio" name="status" id="book_status" value="planning">Planning</label>
+                        </fieldset>
+                        <label for="book_rating">Score out of 5</label>
+                        <select name="rating" id="book_rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button type="button" id="add_book_submit">Submit</button>
+                        <button type="button" id="add_book_cancel">Cancel</button>
+                    </form>
+                </dialog>
             </div>
         </div>
         <p class="mybooks_section">My books</p>
         <div class="card_container">
+            <dialog>
+                Are you sure you want to delete this book ?
+                <button type="button">Yes</button>
+                <button type="button">No</button>
+            </dialog>
             <div class="card">
                 <div class="book_info">
                     <div class="title">Harry Potter and the Philosopher's Stone</div>
