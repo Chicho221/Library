@@ -15,7 +15,7 @@ body{
     margin: 0;
     background-color: var(--white);
 }
-p{
+p, button, img{
     padding: 0;
     margin: 0;
 }
@@ -108,15 +108,84 @@ main{
 }
 
 .card{
+    display: grid;
+    position: relative;
+    grid-template-columns: 2fr 1fr;
+    font-family: var(--font);
     color: var(--blue300);
     height: 200px;
     background-color: var(--blue100);
     border-radius: 1rem;
     padding: 1rem;
     transition: .3s;
+    cursor: default;
 }
 .card:hover{
     color: var(--white);
     background-color: var(--blue200);
     transform: scale(1.01);
+    border-radius: 1rem 0 1rem 1rem;
+}
+.card:hover .book_cover{
+    background-color: var(--blue100);
+    transform: scale(1.01);
+}
+.card:hover .card_menu{
+    transform: translate(95%);
+    background-color: var(--blue200);
+}
+
+.title{
+    font-size: var(--medium);
+}
+.genre{
+    font-size: var(--normal);
+}
+.author{
+    font-size: var(--normal);
+}
+.pages{
+    font-size: var(--normal);
+}
+.status{
+    font-size: var(--normal);
+}
+.progress{
+    font-size: var(--normal);
+}
+.raiting{
+    font-size: var(--big);
+}
+.book_cover{
+    display: flex;
+    justify-self: flex-end;
+    border: 0;
+    background-color: var(--blue200);
+    border-radius: var(--small);
+    width: 150px;
+    height: 200px;
+    object-fit: fill;
+}
+.card_menu{
+    padding: 0.5rem 0;
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0%;
+    top: 0%;
+    background-color: var(--blue100);
+    width: 50px;
+    border-radius: 0 1rem 1rem 0;
+    transition: 0.1s;
+    z-index: -1;
+}
+.icon{
+    width: 36px;
+    height: 36px;
+}
+.delete_card, .edit_card{
+    background-color: transparent;
+    border: none;
 }
