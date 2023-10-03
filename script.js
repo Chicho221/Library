@@ -1,4 +1,23 @@
-const myLibrary = [];
+const myLibrary = [
+    Book[0]= {
+        title: 'Harry Potter',
+        genre: 'Fantasy',
+        author: 'JK',
+        pages: 233,
+        status: 'Finished',
+        rating: 3,
+        cover: ''
+    },
+    Book[1]= {
+        title: 'Harry Potter',
+        genre: 'Fantasy',
+        author: 'JK',
+        pages: 11,
+        status: 'Finished',
+        rating: 3,
+        cover: ''
+    }
+];
 
 
 const OpenAddModal = document.querySelector('#add_button');
@@ -12,6 +31,7 @@ const BookPages = document.querySelector('#book_pages');
 const BookStatus = document.getElementsByName('status');
 const BookRating = document.querySelector('#book_rating');
 const BookCover = document.querySelector('#book_cover')
+const CardContainer = document.querySelector('.card_container')
 
 // Add book modal
 OpenAddModal.addEventListener('click', () => {
@@ -72,3 +92,65 @@ function getBookStatus(){ //Get book status from modal
         }
     }
 }
+
+function DisplayCards(){
+    for(i = 0;i < myLibrary.length; i++){
+        let card = document.createElement('div');
+        card.classList.add('card');
+            let bookinfo = document.createElement('div');
+            bookinfo.classList.add('book_info');
+                let title = document.createElement('div');
+                 title.classList.add('title')
+                 title.textContent= myLibrary[i].title;
+                let genre = document.createElement('div');
+                 genre.classList.add('genre')
+                 genre.textContent= 'Genre: ' + myLibrary[i].genre;
+                let author = document.createElement('div');
+                 author.classList.add('author')
+                 author.textContent='Author: ' + myLibrary[i].author;
+                let pages = document.createElement('div');
+                 pages.classList.add('pages')
+                 pages.textContent='Pages: ' + myLibrary[i].pages;
+                let status = document.createElement('div');
+                 status.classList.add('status')
+                 status.textContent='Status: ' + myLibrary[i].status;
+                let rating = document.createElement('div');
+                 rating.classList.add('rating')
+                 rating.textContent=myLibrary[i].rating + '/5';
+            let bookcover = document.createElement('div');
+            bookcover.classList.add('book_cover');
+             bookcover.textContent = myLibrary[i].cover;
+            let cardmenu = document.createElement('div');
+             cardmenu.classList.add('card_menu');
+                let deletebutton = document.createElement('button');
+                 deletebutton.classList.add('delete_card');
+                    let deleteicon = document.createElement('img');
+                     deleteicon.classList.add('icon');
+                     deleteicon.src = "icon/cross-white.svg";
+                    let editicon = document.createElement('img');
+                     editicon.classList.add('icon');
+                     editicon.src = "icon/pencil-white.svg";
+                let editbutton = document.createElement('button');
+                 editbutton.classList.add('edit_card');
+
+        card.appendChild(bookinfo)
+            bookinfo.appendChild(title)
+            bookinfo.appendChild(genre)
+            bookinfo.appendChild(author)
+            bookinfo.appendChild(pages)
+            bookinfo.appendChild(status)
+            bookinfo.appendChild(rating)
+        card.appendChild(bookcover)
+        card.appendChild(cardmenu)
+            cardmenu.appendChild(deletebutton)
+                deletebutton.appendChild(deleteicon)
+            cardmenu.appendChild(editbutton)
+                editbutton.appendChild(editicon)
+
+        CardContainer.appendChild(card);
+    }
+}
+
+window.addEventListener('load',() =>{
+    DisplayCards();
+})
