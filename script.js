@@ -9,7 +9,7 @@ const BookTitle = document.querySelector('#book_title');
 const BookGenre = document.querySelector('#book_genre');
 const BookAuthor = document.querySelector('#book_author');
 const BookPages = document.querySelector('#book_pages');
-/* const BookStatus = document.querySelector('input[type="radio"][name="status"]:checked'); */
+const BookStatus = document.getElementsByName('status');
 const BookRating = document.querySelector('#book_rating');
 const BookCover = document.querySelector('#book_cover')
 
@@ -38,7 +38,7 @@ CloseAddModal.addEventListener('click',() =>{
 // Delete book modal
 // Still thikning how to do this
 
-function Book(title, genre, author, pages, /* status, */ rating, cover){
+function Book(title, genre, author, pages, status, rating, cover){
     this.title = title;
     this.genre = genre;
     this.author = author;
@@ -53,13 +53,22 @@ function addBookToLibrary(){
     let genre = BookGenre.value;
     let author = BookAuthor.value;
     let pages = BookPages.value;
-    /* let status = BookStatus.value; */
+    let status = getBookStatus();
     let rating = BookRating.value;
     let cover = BookCover.value;
 
-    let newBook = new Book(title, genre, author, pages, /* status,*/ rating, cover);
+    let newBook = new Book(title, genre, author, pages, status, rating, cover);
     myLibrary.push(newBook);
 }
 SubmitNewBook.addEventListener('click',() =>{
     addBookToLibrary();
 });
+
+//NOTES TO SELF... Figure out how to get status value
+function getBookStatus(){ //Get book status from modal
+    for(i = 0; i < BookStatus.length; i++){
+        if(BookStatus[i].checked){
+            return BookStatus[i].value;
+        }
+    }
+}
