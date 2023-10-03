@@ -74,11 +74,6 @@
         </div>
         <p class="mybooks_section">My books</p>
         <div class="card_container">
-            <dialog>
-                Are you sure you want to delete this book ?
-                <button type="button">Yes</button>
-                <button type="button">No</button>
-            </dialog>
             <!--<div class="card">
                 <div class="book_info">
                     <div class="title">Harry Potter and the Philosopher's Stone</div>
@@ -95,6 +90,11 @@
                 </div>
             </div>
             -->
+            <dialog class="delete_confirm">
+                Are you sure you want to delete this book ?
+                <button type="button" id="delete_yes">Yes</button>
+                <button type="button" id="delete_no">No</button>
+            </dialog>
         </div>
     </main>
     <script src="script.js"></script>

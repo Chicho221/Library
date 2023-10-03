@@ -24,6 +24,7 @@ const OpenAddModal = document.querySelector('#add_button');
 const CloseAddModal = document.querySelector('#add_book_cancel');
 const AddBookModal = document.querySelector('.add_book_dialog');
 const SubmitNewBook = document.querySelector('#add_book_submit');
+
 const BookTitle = document.querySelector('#book_title');
 const BookGenre = document.querySelector('#book_genre');
 const BookAuthor = document.querySelector('#book_author');
@@ -53,11 +54,6 @@ CloseAddModal.addEventListener('click',() =>{
     AddBookModal.close();
 });
 
-
-
-// Delete book modal
-// Still thikning how to do this
-
 function Book(title, genre, author, pages, status, rating, cover){
     this.title = title;
     this.genre = genre;
@@ -83,7 +79,6 @@ function addBookToLibrary(){
 SubmitNewBook.addEventListener('click',() =>{
     addBookToLibrary();
     ResetBookContainer();
-    DisplayCards();
 });
 
 //NOTES TO SELF... Figure out how to get status value
@@ -99,6 +94,7 @@ function DisplayCards(){
     for(i = 0;i < myLibrary.length; i++){
         let card = document.createElement('div');
         card.classList.add('card');
+        card.setAttribute('id', i);
             let bookinfo = document.createElement('div');
             bookinfo.classList.add('book_info');
                 let title = document.createElement('div');
@@ -125,7 +121,10 @@ function DisplayCards(){
             let cardmenu = document.createElement('div');
              cardmenu.classList.add('card_menu');
                 let deletebutton = document.createElement('button');
-                 deletebutton.classList.add('delete_card');
+                 deletebutton.classList.add('delete_card')
+                  deletebutton.addEventListener('click',() => {
+                    DeleteBook(card.id);
+                  })
                     let deleteicon = document.createElement('img');
                      deleteicon.classList.add('icon');
                      deleteicon.src = "icon/cross-white.svg";
@@ -159,4 +158,11 @@ window.addEventListener('load',() =>{
 
 function ResetBookContainer(){
     CardContainer.innerHTML = '';
+    DisplayCards();
+}
+
+function DeleteBook(index){
+    console.log(index, 1)
+    myLibrary.splice(index, 1);
+    ResetBookContainer();
 }
