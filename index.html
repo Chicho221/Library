@@ -30,48 +30,67 @@
         <div class="add_card_container">
             <div id="card_add">
                 <button id="add_button">+</button>
-                <dialog class="add_book_dialog">
-                    <form action="">
-                        <label for="book_title">Title</label>
-                            <input type="text" name="title" id="book_title">
-                        <label for="book_genre">Genre</label>
-                        <select name="genre" id="book_genre">
-                            <option value="drama">Drama</option>
-                            <option value="action">Action</option>
-                            <option value="romance">Romance</option>
-                            <option value="sci-fi">Sci-fi</option>
-                            <option value="horror">Horror</option>
-                            <option value="fantasy">Fantasy</option>
-                            <option value="criminal">Criminal</option>
-                            <option value="mystery">Mystery</option>
-                        </select>
-                        <label for="book_author">Author</label>
-                            <input type="text" name="author" id="book_author">
-                        <label for="book_pages">Pages</label>    
-                            <input type="number" name="pages" id="book_pages">
-                        <fieldset>
-                            <legend>Book Status</legend>
-                            <label><input type="radio" name="status" id="radio1" value="finished">Finished</label>
-                            <label><input type="radio" name="status" id="radio2" value="dropped">Dropped</label>
-                            <label><input type="radio" name="status" id="radio3" value="inprogress">In Progress</label>
-                            <label><input type="radio" name="status" id="radio4" value="planning">Planning</label>
-                        </fieldset>
-                        <label for="book_rating">Score out of 5</label>
-                        <select name="rating" id="book_rating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <label for="book_cover">Book Cover</label>
-                        <input type="file" name="cover" id="book_cover">
-                        <button type="button" id="add_book_submit">Submit</button>
-                        <button type="button" id="add_book_cancel">Cancel</button>
-                    </form>
-                </dialog>
             </div>
         </div>
+        <dialog class="add_book_dialog">
+            <form action="">
+                <p>Add Book</p>
+                <div class="column title_modal">
+                    <label for="book_title">Title</label>
+                        <input type="text" name="title" id="book_title">
+                </div>
+                <div class="column genre_modal">
+                    <label for="book_genre">Genre</label>
+                    <select name="genre" id="book_genre">
+                        <option value="drama">Drama</option>
+                        <option value="action">Action</option>
+                        <option value="romance">Romance</option>
+                        <option value="sci-fi">Sci-fi</option>
+                        <option value="horror">Horror</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="criminal">Criminal</option>
+                        <option value="mystery">Mystery</option>
+                    </select>
+                </div>
+                <div class="column author_modal">
+                    <label for="book_author">Author</label>
+                        <input type="text" name="author" id="book_author">
+                </div>
+                <div class="column pages_modal">
+                    <label for="book_pages">Pages</label>
+                        <input type="number" name="pages" id="book_pages">
+                </div>
+                <div class="column status_modal">
+                    <fieldset class="row spaced_evenlyX">
+                        <legend>Book Status</legend>
+                        <div class="column">
+                            <label><input type="radio" name="status" id="radio1" value="Finished">Finished</label>
+                            <label><input type="radio" name="status" id="radio2" value="Dropped">Dropped</label>
+                        </div>
+                        <div class="column">
+                            <label><input type="radio" name="status" id="radio3" value="Reading">Reading</label>
+                            <label><input type="radio" name="status" id="radio4" value="Planning">Planning</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="column rating_modal">
+                    <label for="book_rating">Score</label>
+                    <select name="rating" id="book_rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="column cover_modal">
+                    <label for="book_cover">Book Cover</label>
+                    <input type="file" name="cover" id="book_cover">
+                </div>
+                    <button type="button" class="button_modal" id="add_book_submit">Submit</button>
+                    <button type="button" class="button_modal" id="add_book_cancel">Cancel</button>
+            </form>
+        </dialog>
         <p class="mybooks_section">My books</p>
         <div class="card_container">
             <!--<div class="card">
@@ -90,11 +109,6 @@
                 </div>
             </div>
             -->
-            <dialog class="delete_confirm">
-                Are you sure you want to delete this book ?
-                <button type="button" id="delete_yes">Yes</button>
-                <button type="button" id="delete_no">No</button>
-            </dialog>
         </div>
     </main>
     <script src="script.js"></script>

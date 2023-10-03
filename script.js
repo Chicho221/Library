@@ -31,14 +31,14 @@ const BookAuthor = document.querySelector('#book_author');
 const BookPages = document.querySelector('#book_pages');
 const BookStatus = document.getElementsByName('status');
 const BookRating = document.querySelector('#book_rating');
-const BookCover = document.querySelector('#book_cover')
-const CardContainer = document.querySelector('.card_container')
+const BookCover = document.querySelector('#book_cover');
+const CardContainer = document.querySelector('.card_container');
 
 // Add book modal
 OpenAddModal.addEventListener('click', () => {
     AddBookModal.showModal();
 }); 
-AddBookModal.addEventListener('click', e =>{
+AddBookModal.addEventListener('click', e =>{ //Checks if user clicked outside modal
     const dialogDimensions = AddBookModal.getBoundingClientRect()
     if(
         e.clientX < dialogDimensions.left ||
@@ -53,7 +53,7 @@ AddBookModal.addEventListener('click', e =>{
 CloseAddModal.addEventListener('click',() =>{
     AddBookModal.close();
 });
-
+// Create book function
 function Book(title, genre, author, pages, status, rating, cover){
     this.title = title;
     this.genre = genre;
@@ -63,7 +63,7 @@ function Book(title, genre, author, pages, status, rating, cover){
     this.rating = rating;
     this.cover = cover;
 }
-
+// Add book to array
 function addBookToLibrary(){
     let title = BookTitle.value;
     let genre = BookGenre.value;
@@ -78,11 +78,10 @@ function addBookToLibrary(){
 }
 SubmitNewBook.addEventListener('click',() =>{
     addBookToLibrary();
-    ResetBookContainer();
+    Reload();
 });
 
-//NOTES TO SELF... Figure out how to get status value
-function getBookStatus(){ //Get book status from modal
+function getBookStatus(){ //Gets book status from modal
     for(i = 0; i < BookStatus.length; i++){
         if(BookStatus[i].checked){
             return BookStatus[i].value;
@@ -156,13 +155,12 @@ window.addEventListener('load',() =>{
     DisplayCards();
 })
 
-function ResetBookContainer(){
+function Reload(){
     CardContainer.innerHTML = '';
     DisplayCards();
 }
 
 function DeleteBook(index){
-    console.log(index, 1)
     myLibrary.splice(index, 1);
-    ResetBookContainer();
+    Reload();
 }

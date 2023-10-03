@@ -152,6 +152,10 @@ main{
     transition: .3s;
     cursor: default;
 }
+.book_info{
+    display: flex;
+    flex-direction: column;
+}
 .card:hover{
     color: var(--white);
     background-color: var(--blue200);
@@ -173,6 +177,7 @@ main{
 }
 .rating{
     font-size: var(--big);
+    margin-top: auto;
 }
 .book_cover{
     display: flex;
@@ -211,9 +216,89 @@ main{
     background-color: transparent;
     border: none;
 }
+
 .add_book_dialog::backdrop{
     background-color: transparent;
 }
+.add_book_dialog{
+    color: var(--blue300);
+    font-family: var(--font);
+    border-radius: 1rem;
+    border: 4px solid var(--blue300);
+}
+.add_book_dialog form{
+    display: grid;
+    grid-template-columns: 100px 50px 50px 100px;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+.add_book_dialog form > p{
+    grid-area: 1 / 1 / 2 / 5;
+    font-size: var(--big);
+}
+.title_modal{
+    grid-area: 2 / 1 / 3 / 5;
+}
+.genre_modal{
+    grid-area: 4 / 2 / 5 / 4;
+}
+.author_modal{
+    grid-area: 3 / 1 / 4 / 5;
+}
+.pages_modal{
+    grid-area: 4 / 1 / 5 / 2;
+}
+.status_modal{
+    grid-area: 5 / 1 / 6 / 5;
+}
+.rating_modal{
+    grid-area: 4 / 4 / 4 / 5;
+}
+.cover_modal{
+    grid-area: 6 / 1 / 7 / 5;
+}
+#add_book_submit{
+    grid-area: 7 / 1 / 8 / 3;
+}
+#add_book_cancel{
+    grid-area: 7 / 3 / 8 / 5;
+}
+.button_modal{
+    cursor: pointer;
+    font-family: var(--font);
+    border-radius: 1rem;
+    color: var(--white);
+    border: 0;
+    padding: 0.5rem;
+    background-color: var(--blue300);
+}
 .disabled{
     display: none;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+input, fieldset{
+    font-size: var(--normal);
+    font-family: var(--font);
+    border-radius: 0.5rem;
+    border: 2px solid var(--blue300);
+}
+#book_cover{
+    padding: 0.5rem;
+}
+input:focus{
+    outline: 0;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.spaced_evenlyX{
+    justify-content: space-evenly;
 }
