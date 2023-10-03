@@ -82,6 +82,8 @@ function addBookToLibrary(){
 }
 SubmitNewBook.addEventListener('click',() =>{
     addBookToLibrary();
+    ResetBookContainer();
+    DisplayCards();
 });
 
 //NOTES TO SELF... Figure out how to get status value
@@ -154,3 +156,7 @@ function DisplayCards(){
 window.addEventListener('load',() =>{
     DisplayCards();
 })
+
+function ResetBookContainer(){
+    CardContainer.innerHTML = '';
+}
