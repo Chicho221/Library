@@ -1,4 +1,5 @@
 const myLibrary = [
+    /* FOR DEBUG
     Book[0]= {
         title: 'Harry Potter',
         genre: 'Fantasy',
@@ -14,7 +15,7 @@ const myLibrary = [
         pages: 123,
         status: 'Reading',
         cover: ''
-    },
+    }, */
 ];
 
 // Modal selectors
