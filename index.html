@@ -58,7 +58,7 @@
                 </div>
                 <div class="column pages_modal">
                     <label for="book_pages" aria-label="required">Pages</label>
-                        <input type="number" name="pages" id="book_pages" required>
+                        <input type="number" name="pages" id="book_pages" min="1" max="1000" placeholder="max 1000 pages" required>
                 </div>
                 <div class="column status_modal">
                     <fieldset class="row spaced_evenlyX">
@@ -70,16 +70,6 @@
                             <label><input type="radio" name="status" id="radio3" value="Reading" checked>Reading</label>
                         </div>
                     </fieldset>
-                </div>
-                <div class="column rating_modal">
-                    <label for="book_rating" aria-label="optional">Score</label>
-                    <select name="rating" id="book_rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
                 </div>
                 <div class="column cover_modal">
                     <label for="book_cover" aria-label="optional">Book Cover</label>
@@ -98,7 +88,6 @@
                     <div class="author">Author: J.K Rowling</div>
                     <div class="pages">Pages: ???/223  if status reading/dropped ???/out of </div>
                     <div class="status">Status:  finished/reading/plantoread/dropped </div>
-                    <div class="rating">?/5</div>
                 </div>
                 <div class="book_cover"></div>
                 <div class="card_menu">

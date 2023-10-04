@@ -5,18 +5,16 @@ const myLibrary = [
         author: 'JK',
         pages: 233,
         status: 'Finished',
-        rating: 3,
         cover: ''
     },
     Book[1]= {
         title: 'Harry Potter',
         genre: 'Fantasy',
         author: 'JK',
-        pages: 11,
-        status: 'Finished',
-        rating: 3,
+        pages: 123,
+        status: 'Reading',
         cover: ''
-    }
+    },
 ];
 
 
@@ -30,7 +28,6 @@ const BookGenre = document.querySelector('#book_genre');
 const BookAuthor = document.querySelector('#book_author');
 const BookPages = document.querySelector('#book_pages');
 const BookStatus = document.getElementsByName('status');
-const BookRating = document.querySelector('#book_rating');
 const BookCover = document.querySelector('#book_cover');
 const CardContainer = document.querySelector('.card_container');
 const AddForm = document.querySelector('.add_form');
@@ -55,13 +52,12 @@ CloseAddModal.addEventListener('click',() =>{
     AddBookModal.close();
 });
 // Create book function
-function Book(title, genre, author, pages, status, rating, cover){
+function Book(title, genre, author, pages, status, cover){
     this.title = title;
     this.genre = genre;
     this.author = author;
     this.pages = pages;
     this.status = status;
-    this.rating = rating;
     this.cover = cover;
 }
 // Add book to array
@@ -72,10 +68,9 @@ function addBookToLibrary(e){
     let author = BookAuthor.value;
     let pages = BookPages.value;
     let status = getBookStatus();
-    let rating = BookRating.value;
     let cover = BookCover.value;
 
-    let newBook = new Book(title, genre, author, pages, status, rating, cover);
+    let newBook = new Book(title, genre, author, pages, status, cover);
     myLibrary.push(newBook);
     Reload();
     AddBookModal.close()
@@ -111,17 +106,15 @@ function DisplayCards(){
                  pages.textContent='Pages: ' + myLibrary[i].pages;
                 let status = document.createElement('div');
                  status.classList.add('status')
-                 status.textContent='Status: ' + myLibrary[i].status;
-                    let rating = document.createElement('div');
-                    rating.classList.add('rating')
-                    rating.textContent=myLibrary[i].rating + '/5';
+                 status.textContent='Status: ' + myLibrary[i].status;      
             let bookcover = document.createElement('div');
             bookcover.classList.add('book_cover');
              bookcover.setAttribute("style", `background-image: url('${myLibrary[i].cover}')`)
             let cardmenu = document.createElement('div');
              cardmenu.classList.add('card_menu');
                 let deletebutton = document.createElement('button');
-                 deletebutton.classList.add('delete_card')
+                 deletebutton.classList.add('delete_card');
+                 deletebutton.setAttribute('title', 'Delete');
                   deletebutton.addEventListener('click',() => {
                     DeleteBook(card.id);
                   })
@@ -133,6 +126,7 @@ function DisplayCards(){
                      editicon.src = "icon/pencil-white.svg";
                 let editbutton = document.createElement('button');
                  editbutton.classList.add('edit_card');
+                 editbutton.setAttribute('title', 'Change Status')
                  editbutton.addEventListener('click',() =>{
                     StatusChange(card.id);
                  });
@@ -143,7 +137,6 @@ function DisplayCards(){
             bookinfo.appendChild(author)
             bookinfo.appendChild(pages)
             bookinfo.appendChild(status)
-            bookinfo.appendChild(rating)
         card.appendChild(bookcover)
         card.appendChild(cardmenu)
             cardmenu.appendChild(deletebutton)

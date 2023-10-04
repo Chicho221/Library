@@ -175,8 +175,8 @@ main{
 .title{
     font-size: var(--medium);
 }
-.rating{
-    font-size: var(--big);
+.status{
+    font-size: var(--medium);
     margin-top: auto;
 }
 .book_cover{
@@ -241,19 +241,16 @@ main{
     grid-area: 2 / 1 / 3 / 5;
 }
 .genre_modal{
-    grid-area: 4 / 2 / 5 / 4;
+    grid-area: 4 / 3 / 5 / 5;
 }
 .author_modal{
     grid-area: 3 / 1 / 4 / 5;
 }
 .pages_modal{
-    grid-area: 4 / 1 / 5 / 2;
+    grid-area: 4 / 1 / 5 / 3;
 }
 .status_modal{
     grid-area: 5 / 1 / 6 / 5;
-}
-.rating_modal{
-    grid-area: 4 / 4 / 4 / 5;
 }
 .cover_modal{
     grid-area: 6 / 1 / 7 / 5;
