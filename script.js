@@ -112,9 +112,9 @@ function DisplayCards(){
                 let status = document.createElement('div');
                  status.classList.add('status')
                  status.textContent='Status: ' + myLibrary[i].status;
-                let rating = document.createElement('div');
-                 rating.classList.add('rating')
-                 rating.textContent=myLibrary[i].rating + '/5';
+                    let rating = document.createElement('div');
+                    rating.classList.add('rating')
+                    rating.textContent=myLibrary[i].rating + '/5';
             let bookcover = document.createElement('div');
             bookcover.classList.add('book_cover');
              bookcover.setAttribute("style", `background-image: url('${myLibrary[i].cover}')`)
@@ -133,6 +133,9 @@ function DisplayCards(){
                      editicon.src = "icon/pencil-white.svg";
                 let editbutton = document.createElement('button');
                  editbutton.classList.add('edit_card');
+                 editbutton.addEventListener('click',() =>{
+                    StatusChange(card.id);
+                 });
 
         card.appendChild(bookinfo)
             bookinfo.appendChild(title)
@@ -163,5 +166,14 @@ function Reload(){
 
 function DeleteBook(index){
     myLibrary.splice(index, 1);
+    Reload();
+}
+
+function StatusChange(index){
+    if(myLibrary[index].status == "Finished"){
+        myLibrary[index].status = "Reading";
+    }else{
+        myLibrary[index].status = "Finished";
+    }
     Reload();
 }
