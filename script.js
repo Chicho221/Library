@@ -17,12 +17,12 @@ const myLibrary = [
     },
 ];
 
-
+// Modal selectors
 const OpenAddModal = document.querySelector('#add_button');
 const CloseAddModal = document.querySelector('#add_book_cancel');
 const AddBookModal = document.querySelector('.add_book_dialog');
 const SubmitNewBook = document.querySelector('#add_book_submit');
-
+// Book info selector
 const BookTitle = document.querySelector('#book_title');
 const BookGenre = document.querySelector('#book_genre');
 const BookAuthor = document.querySelector('#book_author');
@@ -76,15 +76,15 @@ function addBookToLibrary(e){
     AddBookModal.close()
 }
 AddForm.addEventListener('submit', addBookToLibrary);
-
-function getBookStatus(){ //Gets book status from modal
+//Gets book status from modal
+function getBookStatus(){
     for(i = 0; i < BookStatus.length; i++){
         if(BookStatus[i].checked){
             return BookStatus[i].value;
         }
     }
 }
-
+//Displays cards on website
 function DisplayCards(){
     for(i = 0;i < myLibrary.length; i++){
         let card = document.createElement('div');
@@ -116,7 +116,7 @@ function DisplayCards(){
                  deletebutton.classList.add('delete_card');
                  deletebutton.setAttribute('title', 'Delete');
                   deletebutton.addEventListener('click',() => {
-                    DeleteBook(card.id);
+                    DeleteBook(card.id); //Deletes card
                   })
                     let deleteicon = document.createElement('img');
                      deleteicon.classList.add('icon');
@@ -128,7 +128,7 @@ function DisplayCards(){
                  editbutton.classList.add('edit_card');
                  editbutton.setAttribute('title', 'Change Status')
                  editbutton.addEventListener('click',() =>{
-                    StatusChange(card.id);
+                    StatusChange(card.id); //Changes book status
                  });
 
         card.appendChild(bookinfo)
@@ -147,21 +147,21 @@ function DisplayCards(){
         CardContainer.appendChild(card);
     }
 }
-
+// On page load display's cards
 window.addEventListener('load',() =>{
     DisplayCards();
 })
-
+// Reloads cards container
 function Reload(){
     CardContainer.innerHTML = '';
     DisplayCards();
 }
-
+// Deletes book
 function DeleteBook(index){
     myLibrary.splice(index, 1);
     Reload();
 }
-
+// Changes status
 function StatusChange(index){
     if(myLibrary[index].status == "Finished"){
         myLibrary[index].status = "Reading";

@@ -15,9 +15,15 @@ body{
     margin: 0;
     background-color: var(--white);
 }
-p, button, img{
+p,
+button, 
+img{
     padding: 0;
     margin: 0;
+}
+input:focus,
+button:focus{
+    outline: 0;
 }
 
 /* ///HEADER/// */
@@ -226,14 +232,14 @@ main{
     border-radius: 1rem;
     border: 4px solid var(--blue300);
 }
-.add_book_dialog form{
+.add_form{
     display: grid;
     grid-template-columns: 100px 50px 50px 100px;
     flex-direction: column;
     text-align: center;
     gap: 1rem;
 }
-.add_book_dialog form > p{
+.add_form > p{
     grid-area: 1 / 1 / 2 / 5;
     font-size: var(--big);
 }
@@ -274,13 +280,6 @@ main{
 .button_modal:hover{
     background-color: var(--blue200);
 }
-.disabled{
-    display: none;
-}
-.column{
-    display: flex;
-    flex-direction: column;
-}
 
 input, fieldset{
     font-size: var(--normal);
@@ -291,15 +290,20 @@ input, fieldset{
 #book_cover{
     padding: 0.5rem;
 }
-input:focus{
-    outline: 0;
+/* Utility */
+.column{
+    display: flex;
+    flex-direction: column;
 }
-
 .row{
     display: flex;
     flex-direction: row;
 }
-
 .spaced_evenlyX{
     justify-content: space-evenly;
 }
+.disabled{
+    display: none;
+}
+
+
