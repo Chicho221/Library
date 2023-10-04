@@ -117,7 +117,7 @@ function DisplayCards(){
                  rating.textContent=myLibrary[i].rating + '/5';
             let bookcover = document.createElement('div');
             bookcover.classList.add('book_cover');
-             bookcover.textContent = myLibrary[i].cover;
+             bookcover.setAttribute("style", `background-image: url('${myLibrary[i].cover}')`)
             let cardmenu = document.createElement('div');
              cardmenu.classList.add('card_menu');
                 let deletebutton = document.createElement('button');
