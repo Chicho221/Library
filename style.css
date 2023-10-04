@@ -231,7 +231,7 @@ main{
     grid-template-columns: 100px 50px 50px 100px;
     flex-direction: column;
     text-align: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 .add_book_dialog form > p{
     grid-area: 1 / 1 / 2 / 5;
@@ -265,6 +265,7 @@ main{
     grid-area: 7 / 3 / 8 / 5;
 }
 .button_modal{
+    font-size: var(--medium);
     cursor: pointer;
     font-family: var(--font);
     border-radius: 1rem;
@@ -272,6 +273,9 @@ main{
     border: 0;
     padding: 0.5rem;
     background-color: var(--blue300);
+}
+.button_modal:hover{
+    background-color: var(--blue200);
 }
 .disabled{
     display: none;

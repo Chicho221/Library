@@ -33,15 +33,15 @@
             </div>
         </div>
         <dialog class="add_book_dialog">
-            <form action="">
+            <form class="add_form">
                 <p>Add Book</p>
                 <div class="column title_modal">
-                    <label for="book_title">Title</label>
-                        <input type="text" name="title" id="book_title">
+                    <label for="book_title" aria-label="required">Title</label>
+                        <input type="text" name="title" id="book_title" required>
                 </div>
                 <div class="column genre_modal">
-                    <label for="book_genre">Genre</label>
-                    <select name="genre" id="book_genre">
+                    <label for="book_genre" aria-label="required">Genre</label>
+                    <select name="genre" id="book_genre" required>
                         <option value="drama">Drama</option>
                         <option value="action">Action</option>
                         <option value="romance">Romance</option>
@@ -53,12 +53,12 @@
                     </select>
                 </div>
                 <div class="column author_modal">
-                    <label for="book_author">Author</label>
-                        <input type="text" name="author" id="book_author">
+                    <label for="book_author" aria-label="required">Author</label>
+                        <input type="text" name="author" id="book_author" required>
                 </div>
                 <div class="column pages_modal">
-                    <label for="book_pages">Pages</label>
-                        <input type="number" name="pages" id="book_pages">
+                    <label for="book_pages" aria-label="required">Pages</label>
+                        <input type="number" name="pages" id="book_pages" required>
                 </div>
                 <div class="column status_modal">
                     <fieldset class="row spaced_evenlyX">
@@ -68,13 +68,13 @@
                             <label><input type="radio" name="status" id="radio2" value="Dropped">Dropped</label>
                         </div>
                         <div class="column">
-                            <label><input type="radio" name="status" id="radio3" value="Reading">Reading</label>
+                            <label><input type="radio" name="status" id="radio3" value="Reading" checked>Reading</label>
                             <label><input type="radio" name="status" id="radio4" value="Planning">Planning</label>
                         </div>
                     </fieldset>
                 </div>
                 <div class="column rating_modal">
-                    <label for="book_rating">Score</label>
+                    <label for="book_rating" aria-label="optional">Score</label>
                     <select name="rating" id="book_rating">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -84,11 +84,11 @@
                     </select>
                 </div>
                 <div class="column cover_modal">
-                    <label for="book_cover">Book Cover</label>
+                    <label for="book_cover" aria-label="optional">Book Cover</label>
                     <input type="file" name="cover" id="book_cover">
                 </div>
-                    <button type="button" class="button_modal" id="add_book_submit">Submit</button>
-                    <button type="button" class="button_modal" id="add_book_cancel">Cancel</button>
+                    <button type="submit" class="button_modal" id="add_book_submit" aria-label="submit">Submit</button>
+                    <button type="button" class="button_modal" id="add_book_cancel" aria-label="cancel">Cancel</button>
             </form>
         </dialog>
         <p class="mybooks_section">My books</p>

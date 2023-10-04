@@ -33,6 +33,7 @@ const BookStatus = document.getElementsByName('status');
 const BookRating = document.querySelector('#book_rating');
 const BookCover = document.querySelector('#book_cover');
 const CardContainer = document.querySelector('.card_container');
+const AddForm = document.querySelector('.add_form');
 
 // Add book modal
 OpenAddModal.addEventListener('click', () => {
@@ -64,7 +65,8 @@ function Book(title, genre, author, pages, status, rating, cover){
     this.cover = cover;
 }
 // Add book to array
-function addBookToLibrary(){
+function addBookToLibrary(e){
+    e.preventDefault();
     let title = BookTitle.value;
     let genre = BookGenre.value;
     let author = BookAuthor.value;
@@ -75,11 +77,10 @@ function addBookToLibrary(){
 
     let newBook = new Book(title, genre, author, pages, status, rating, cover);
     myLibrary.push(newBook);
-}
-SubmitNewBook.addEventListener('click',() =>{
-    addBookToLibrary();
     Reload();
-});
+    AddBookModal.close()
+}
+AddForm.addEventListener('submit', addBookToLibrary);
 
 function getBookStatus(){ //Gets book status from modal
     for(i = 0; i < BookStatus.length; i++){
